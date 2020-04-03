@@ -18,6 +18,7 @@ def text_from_pdf(pdf_path):
     return text
 
 # change the base_url to http://openaccess.thecvf.com/menu.py
+conferences = []
 base_url = "http://openaccess.thecvf.com/menu.py"
 # base_url  = "http://papers.nips.cc"
 
