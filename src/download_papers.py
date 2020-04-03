@@ -17,7 +17,9 @@ def text_from_pdf(pdf_path):
     f.close()
     return text
 
-base_url  = "http://papers.nips.cc"
+# change the base_url to http://openaccess.thecvf.com/menu.py
+base_url = "http://openaccess.thecvf.com/menu.py"
+# base_url  = "http://papers.nips.cc"
 
 index_urls = {1987: "https://papers.nips.cc/book/neural-information-processing-systems-1987"}
 for i in range(1, 33):
@@ -75,7 +77,7 @@ for year in sorted(index_urls.keys()):
         with open(paper_info_html_path, "rb") as f:
            html_content = f.read()
         paper_soup = BeautifulSoup(html_content, "lxml")
-        try: 
+        try:
             abstract = paper_soup.find('p', attrs={"class": "abstract"}).contents[0]
         except:
             print("Abstract not found %s" % paper_title.encode("ascii", "replace"))
